@@ -1,0 +1,41 @@
+{
+  "name": "orchestrator-lite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A cloud-native distributed workflow and job orchestration platform inspired by Temporal, Airflow, and AWS Step Functions.",
+  "main": "index.js",
+  "type": "module",
+  "workspaces": ["services/*"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:orchestrator": "cd services/orchestrator && nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/index.ts",
+    "dev:worker": "cd services/worker && nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alonzo853/orchestrator-lite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alonzo853/orchestrator-lite/issues"
+  },
+  "homepage": "https://github.com/Alonzo853/orchestrator-lite#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.3",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "ioredis": "^5.8.2",
+    "pg": "^8.16.3",
+    "pino": "^10.1.0",
+    "zod": "^4.2.1"
+  }
+}
