@@ -13,9 +13,6 @@ Orchestrator Lite executes DAG-based workflows with durable state, distributed w
 - Redis-backed task queues
 - Production-oriented architecture and clean abstractions
 
-## Why this project exists
-This project is intentionally **not a toy**. It focuses on system design, correctness under failure, and operational concerns that appear in real-world distributed systems.
-
 ## Tech Stack
 - Node.js (TypeScript)
 - PostgreSQL
