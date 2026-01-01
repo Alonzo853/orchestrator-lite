@@ -19,5 +19,3 @@ Orchestrator Lite executes DAG-based workflows with durable state, distributed w
 - Redis
 - Docker & Docker Compose
 - OpenTelemetry (tracing & metrics)
-
-> Built as a portfolio-grade system to demonstrate production backend engineering skills.
