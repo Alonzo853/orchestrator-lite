@@ -4,12 +4,14 @@
   "private": true,
   "description": "A cloud-native distributed workflow and job orchestration platform inspired by Temporal, Airflow, and AWS Step Functions.",
   "main": "index.js",
-  "type": "module",
-  "workspaces": ["services/*"],
+  "type": "commonjs",
+  "workspaces": [
+    "services/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:orchestrator": "cd services/orchestrator && nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/index.ts",
-    "dev:worker": "cd services/worker && nodemon src/index.ts"
+    "dev:orchestrator": "cd services/orchestrator && nodemon --watch src --ext ts --exec \"node -r ts-node/register src/index.ts\"",
+    "dev:worker": "cd services/worker && nodemon --watch src --ext ts --exec \"node -r ts-node/register src/index.ts\""
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,8 @@
   "homepage": "https://github.com/Alonzo853/orchestrator-lite#readme",
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^25.0.3",
+    "@types/node": "^20.19.6",
+    "@types/pg": "^8.16.0",
     "eslint": "^9.39.2",
     "nodemon": "^3.1.11",
     "prettier": "^3.7.4",
@@ -32,6 +35,8 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "docker": "^1.0.0",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "ioredis": "^5.8.2",
     "pg": "^8.16.3",
